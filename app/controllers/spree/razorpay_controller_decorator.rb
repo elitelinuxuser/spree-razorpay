@@ -1,7 +1,7 @@
 module Spree
   module RazorpayControllerDecorator
 
-    skip_before_action :verify_authenticity_token
+    before_action :verify_authenticity_token
 
     def create
       response_status = Spree::Order.process_razorpayment(params, current_order)
@@ -24,4 +24,4 @@ module Spree
   end
 end
 
-::Spree::RazorpayController.prepend Spree::RazorpayControllerDecorator
+Spree::RazorpayController.prepend Spree::RazorpayControllerDecorator
