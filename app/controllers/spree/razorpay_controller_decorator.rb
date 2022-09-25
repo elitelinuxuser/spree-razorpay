@@ -24,4 +24,4 @@ module Spree
   end
 end
 
-Spree::RazorpayController.prepend Spree::RazorpayControllerDecorator
+::Spree::RazorpayController.prepend Spree::RazorpayControllerDecorator
