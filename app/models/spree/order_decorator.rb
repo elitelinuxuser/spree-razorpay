@@ -1,4 +1,4 @@
-Spree::Order.class_eval do
+Spree::OrderDecorator.class_eval do
 
   def self.process_razorpayment(params, order)
     payment_method = Spree::PaymentMethod.find(params[:payment_method_id])
@@ -17,7 +17,7 @@ Spree::Order.class_eval do
   end
 
   def amount_in_paise
-    (amount.to_f * 100).to_i
+    (total.to_f * 100).to_i
   end
 
   def self.setup_razorpay(payment_method)
