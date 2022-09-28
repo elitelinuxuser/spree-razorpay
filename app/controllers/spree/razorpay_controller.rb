@@ -1,5 +1,5 @@
 module Spree
-  module RazorpayControllerDecorator
+  class RazorpayController < Spree::Api::BaseController
 
     before_action :verify_authenticity_token
 
@@ -23,5 +23,3 @@ module Spree
     end
   end
 end
-
-Spree::RazorpayController.prepend Spree::RazorpayControllerDecorator
